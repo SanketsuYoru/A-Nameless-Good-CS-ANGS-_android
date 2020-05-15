@@ -13,4 +13,15 @@ public class ScheduleArragement {
         weekBegin=0;
         weekEnd=0;
     }
+
+    @Override
+    public String toString() {
+        return "ScheduleArragement{" +
+                "day=" + day  +
+                ", dailyClassBegin=" + dailyClassBegin +
+                ", dailyClassEnd=" + dailyClassEnd +
+                ", weekBegin=" + weekBegin +
+                ", weekEnd=" + weekEnd +
+                '}';
+    }
 }

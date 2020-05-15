@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
 
-                    if(!result.equals("ValidationError"))
+                    if(!result.contains("ValidationError"))
                     {
                     //main_iv.setImageBitmap(vcode);
                     main_tv.setText(result);
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.e("Error","验证错误/ValidationError");
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("验证错误/ValidationError");
-                        builder.setMessage("请检查输入信息是否正确/你个哈皮又输错了？");
+                        builder.setMessage(result);
                         //builder.setIcon(R.drawable.ic_launcher);
                         builder.setView(new EditText(MainActivity.this));
                         builder.setPositiveButton("是" ,  null );

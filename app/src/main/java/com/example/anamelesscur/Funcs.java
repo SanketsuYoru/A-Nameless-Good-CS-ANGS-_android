@@ -5,6 +5,8 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.databinding.ObservableList;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -32,7 +34,7 @@ import static com.example.anamelesscur.Signedin.RequestedContent;
 public class Funcs {
 
     public static String Userid="20170103040117";
-    private static String PassWord="Elpsycongroo1";
+    private static String PassWord="Masyumaro103";
     public static String vcodestr="";
     public static Bitmap vcode=null;
     public static String VIEWSTATE="";
@@ -79,7 +81,7 @@ public class Funcs {
                     Signedin.CurriculumSchedule+=(td.text()+"\n");
                 }
             }
-            //Log.e("Cs",temp);
+            Log.e("Cs","");
             //CurriculumSchedule+=temp;
         }
 
@@ -91,7 +93,7 @@ public class Funcs {
             Log.e("Arragement",str);
             //get Which day
             char[] originCharArry=str.toCharArray();
-            sa.day += (originCharArry[0] + originCharArry[1]);
+            sa.day =String.valueOf(originCharArry[0])+String.valueOf(originCharArry[1]);
             String regex = "[^0-9]";
             str=str.replaceAll(regex," ");
             String[] strArrysplited=str.split(" ");
@@ -434,7 +436,7 @@ public class Funcs {
                         Pattern p = Pattern.compile(REGEX);
                         vs=p.matcher(s).replaceAll("");
                         REGEX="\" />";
-                         p = Pattern.compile(REGEX);
+                        p = Pattern.compile(REGEX);
                         vs=p.matcher(vs).replaceAll("");
 
                     }
